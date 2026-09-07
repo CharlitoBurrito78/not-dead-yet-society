@@ -1,0 +1,298 @@
+<title>Not Dead Yet Society</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root{
+    --bg:#F2F1E7;
+    --surface:#E7E3D2;
+    --surface-2:#DCD7C3;
+    --ink:#202B20;
+    --ink-soft:#57604E;
+    --line:#C9C2A8;
+    --accent:#D9481F;
+    --accent-ink:#FBEFE8;
+    --accent2:#2F6E5B;
+    --accent2-ink:#E9F2EE;
+    --shadow: 0 1px 0 rgba(32,43,32,0.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12180E;
+      --surface:#1A2216;
+      --surface-2:#212B1B;
+      --ink:#ECE8D6;
+      --ink-soft:#AEB49C;
+      --line:#3A4432;
+      --accent:#FF7043;
+      --accent-ink:#2B140C;
+      --accent2:#5FB79B;
+      --accent2-ink:#0E1F1A;
+      --shadow: 0 1px 0 rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12180E;
+    --surface:#1A2216;
+    --surface-2:#212B1B;
+    --ink:#ECE8D6;
+    --ink-soft:#AEB49C;
+    --line:#3A4432;
+    --accent:#FF7043;
+    --accent-ink:#2B140C;
+    --accent2:#5FB79B;
+    --accent2-ink:#0E1F1A;
+    --shadow: 0 1px 0 rgba(0,0,0,0.3);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height:1.55;
+  }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+
+  h1,h2,h3{
+    font-family:"Fraunces", ui-serif, Georgia, serif;
+    font-weight:600;
+    line-height:1.05;
+    text-wrap:balance;
+    margin:0;
+  }
+
+  .label{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+
+  header.hero{
+    padding:4.5rem 0 3.5rem;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:3rem;
+  }
+  .seal{ width:96px; height:96px; flex:none; }
+  .seal text{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:6.4px;
+    letter-spacing:2px;
+    fill:var(--ink-soft);
+  }
+  .seal .ring{ fill:none; stroke:var(--line); }
+  .seal .core{ fill:none; stroke:var(--accent); stroke-width:1.6; }
+  .seal .star{ fill:var(--accent); }
+
+  h1.title{
+    font-size:clamp(2.6rem, 6vw, 4.1rem);
+    letter-spacing:-0.01em;
+  }
+  .tagline{
+    margin-top:1rem;
+    font-size:1.2rem;
+    color:var(--ink-soft);
+    max-width:34ch;
+  }
+  .tagline em{
+    font-style:normal;
+    color:var(--ink);
+    background:linear-gradient(to top, color-mix(in srgb, var(--accent) 30%, transparent) 0 0.28em, transparent 0.28em);
+  }
+
+  section{ padding:3.4rem 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+
+  .kicker{ margin-bottom:0.9rem; }
+  h2.section-title{ font-size:1.9rem; margin-bottom:1.1rem; }
+  p.lede{ font-size:1.08rem; max-width:58ch; }
+  p{ color:var(--ink-soft); }
+  p strong{ color:var(--ink); font-weight:600; }
+
+  .articles{
+    display:flex;
+    flex-direction:column;
+  }
+  .article{
+    display:grid;
+    grid-template-columns:4.2rem 1fr;
+    gap:1rem;
+    padding:1.15rem 0;
+    border-top:1px solid var(--line);
+  }
+  .article:last-child{ border-bottom:1px solid var(--line); }
+  .article .num{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.78rem;
+    color:var(--accent2);
+    padding-top:0.2rem;
+  }
+  .article p{ margin:0; color:var(--ink); }
+
+  .perks{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .perk{
+    padding:1.3rem 1.4rem;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .perk .label{ display:block; margin-bottom:0.5rem; color:var(--accent2); }
+  .perk p{ margin:0; color:var(--ink); font-size:0.97rem; }
+  @media (max-width:560px){
+    .perks{ grid-template-columns:1fr; }
+  }
+
+  .join{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:1.5rem;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:2rem 2.2rem;
+    box-shadow:var(--shadow);
+  }
+  .join h3{ font-size:1.5rem; margin-bottom:0.4rem; }
+  .join p{ margin:0; max-width:34ch; }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    padding:0.85rem 1.3rem;
+    border-radius:2px;
+    white-space:nowrap;
+    transition:transform 0.15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+
+  footer{
+    padding:2.5rem 0 4rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  footer .label{ margin:0; }
+
+  @media (prefers-reduced-motion:reduce){
+    .btn{ transition:none; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-top">
+      <span class="label">notdeadyetsociety.com</span>
+      <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="ring" cx="50" cy="50" r="47" stroke-width="1"></circle>
+        <circle class="core" cx="50" cy="50" r="36"></circle>
+        <path id="ringpath" d="M 50,14 A 36,36 0 1 1 49.9,14" fill="none"></path>
+        <text><textPath href="#ringpath" startOffset="2">EST. 2026 &#8226; STILL HERE &#8226; STILL GOING &#8226;</textPath></text>
+        <path class="star" d="M50 44 L52.2 49.8 58 50 53.2 53.6 54.8 59.4 50 56 45.2 59.4 46.8 53.6 42 50 47.8 49.8 Z"></path>
+      </svg>
+    </div>
+    <h1 class="title">The Not Dead&nbsp;Yet Society</h1>
+    <p class="tagline">A club for people who have <em>officially</em> outlived their own low expectations &mdash; and intend to keep doing so, loudly.</p>
+  </header>
+
+  <section id="manifesto">
+    <p class="label kicker">Manifesto</p>
+    <h2 class="section-title">We got old. We did not get boring.</h2>
+    <p class="lede">The Not Dead Yet Society is a standing appointment for anyone who has decided that &ldquo;acting your age&rdquo; is a suggestion, not a rule. We meet, we make noise, we compare notes on grandchildren and hip replacements in the same sentence. <strong>Membership requires nothing but nerve and a decent pair of walking shoes.</strong></p>
+  </section>
+
+  <section id="articles">
+    <p class="label kicker">Articles of Membership</p>
+    <h2 class="section-title">The by-laws, such as they are</h2>
+    <div class="articles">
+      <div class="article">
+        <span class="num">ART. I</span>
+        <p>Eligibility requires having outlived at least one doctor&rsquo;s prediction, one fad diet, or one truly regrettable haircut.</p>
+      </div>
+      <div class="article">
+        <span class="num">ART. II</span>
+        <p>Minimum age is whatever lets you remember rotary phones. Lying about it is permitted and, frankly, encouraged.</p>
+      </div>
+      <div class="article">
+        <span class="num">ART. III</span>
+        <p>Attendance at meetings is optional. Enthusiasm for the cake table is not.</p>
+      </div>
+      <div class="article">
+        <span class="num">ART. IV</span>
+        <p>No story may begin with &ldquo;back in my day&rdquo; unless it ends with a joke at your own expense.</p>
+      </div>
+      <div class="article">
+        <span class="num">ART. V</span>
+        <p>Every member agrees to try one new thing per month &mdash; ideally something the grandchildren would find deeply embarrassing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="perks">
+    <p class="label kicker">Member Benefits</p>
+    <h2 class="section-title">What you get for showing up</h2>
+    <div class="perks">
+      <div class="perk">
+        <span class="label">Gatherings</span>
+        <p>Coffee, cards, and complaining &mdash; on a schedule loose enough to forget and forgive.</p>
+      </div>
+      <div class="perk">
+        <span class="label">Field trips</span>
+        <p>Outings chosen for scenery, snacks, and a reasonable number of bathrooms.</p>
+      </div>
+      <div class="perk">
+        <span class="label">The Pulse</span>
+        <p>An occasional newsletter, proof of life, and an excuse to gossip in writing.</p>
+      </div>
+      <div class="perk">
+        <span class="label">Still Got It Awards</span>
+        <p>Annual, unserious, and handed out for reasons that make sense only to us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="join">
+      <div>
+        <h3>Not dead yet? Come prove it.</h3>
+        <p>Say hello and we&rsquo;ll tell you when and where the next gathering is.</p>
+      </div>
+      <a class="btn" href="mailto:hello@notdeadyetsociety.com">Say hello &rarr;</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="label">&copy; 2026 The Not Dead Yet Society</p>
+    <p class="label">Est. somewhere between a nap and a second wind</p>
+  </footer>
+</div>
