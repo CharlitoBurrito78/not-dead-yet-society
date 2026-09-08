@@ -1,298 +1,298 @@
 <title>Not Dead Yet Society</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Zilla+Slab:wght@400;500;600&display=swap">
 <style>
   :root{
-    --bg:#F2F1E7;
-    --surface:#E7E3D2;
-    --surface-2:#DCD7C3;
-    --ink:#202B20;
-    --ink-soft:#57604E;
-    --line:#C9C2A8;
-    --accent:#D9481F;
-    --accent-ink:#FBEFE8;
-    --accent2:#2F6E5B;
-    --accent2-ink:#E9F2EE;
-    --shadow: 0 1px 0 rgba(32,43,32,0.06);
+    --bg:#F6EFE0;
+    --surface:#ECE1C8;
+    --ink:#2B2118;
+    --ink-soft:#6E5D49;
+    --line:#D9C9A6;
+    --mustard:#D89A2E;
+    --teal:#2C7A73;
+    --burnt:#BC5330;
+    --olive:#79864A;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#12180E;
-      --surface:#1A2216;
-      --surface-2:#212B1B;
-      --ink:#ECE8D6;
-      --ink-soft:#AEB49C;
-      --line:#3A4432;
-      --accent:#FF7043;
-      --accent-ink:#2B140C;
-      --accent2:#5FB79B;
-      --accent2-ink:#0E1F1A;
-      --shadow: 0 1px 0 rgba(0,0,0,0.3);
+      --bg:#1E1810;
+      --surface:#282018;
+      --ink:#F1E7D2;
+      --ink-soft:#C3B191;
+      --line:#473A28;
+      --mustard:#EBB44B;
+      --teal:#57A79F;
+      --burnt:#E27B4F;
+      --olive:#9DAF6C;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#12180E;
-    --surface:#1A2216;
-    --surface-2:#212B1B;
-    --ink:#ECE8D6;
-    --ink-soft:#AEB49C;
-    --line:#3A4432;
-    --accent:#FF7043;
-    --accent-ink:#2B140C;
-    --accent2:#5FB79B;
-    --accent2-ink:#0E1F1A;
-    --shadow: 0 1px 0 rgba(0,0,0,0.3);
+    --bg:#1E1810;
+    --surface:#282018;
+    --ink:#F1E7D2;
+    --ink-soft:#C3B191;
+    --line:#473A28;
+    --mustard:#EBB44B;
+    --teal:#57A79F;
+    --burnt:#E27B4F;
+    --olive:#9DAF6C;
   }
 
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
   body{
     margin:0;
     background:var(--bg);
     color:var(--ink);
-    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-    line-height:1.55;
+    font-family:"Zilla Slab", Georgia, serif;
+    line-height:1.6;
   }
-  ::selection{ background:var(--accent); color:var(--accent-ink); }
+  ::selection{ background:var(--mustard); color:var(--ink); }
 
   h1,h2,h3{
-    font-family:"Fraunces", ui-serif, Georgia, serif;
-    font-weight:600;
+    font-family:"Jost", ui-sans-serif, system-ui, sans-serif;
+    font-weight:500;
     line-height:1.05;
+    letter-spacing:0.01em;
     text-wrap:balance;
     margin:0;
   }
-
-  .label{
-    font-family:"IBM Plex Mono", ui-monospace, monospace;
-    font-size:0.72rem;
-    letter-spacing:0.14em;
+  .eyebrow{
+    font-family:"Jost", sans-serif;
+    font-size:0.74rem;
+    letter-spacing:0.22em;
     text-transform:uppercase;
     color:var(--ink-soft);
   }
 
-  .wrap{
-    max-width:760px;
-    margin:0 auto;
-    padding:0 1.5rem;
+  .wrap{ max-width:900px; margin:0 auto; padding:0 1.5rem; }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{ border-bottom:1px solid var(--line); padding:1.1rem 0; }
+  .masthead .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; flex-wrap:wrap;
   }
 
-  header.hero{
-    padding:4.5rem 0 3.5rem;
-    border-bottom:1px solid var(--line);
+  /* ---------- HERO ---------- */
+  .hero{ padding:5rem 0 3rem; text-align:center; }
+  .hero .eyebrow{ display:block; margin-bottom:1.4rem; }
+  h1.headline{
+    font-size:clamp(2.6rem, 7vw, 4.4rem);
+    max-width:16ch; margin:0 auto;
   }
-  .hero-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem;
-    margin-bottom:3rem;
-  }
-  .seal{ width:96px; height:96px; flex:none; }
-  .seal text{
-    font-family:"IBM Plex Mono", ui-monospace, monospace;
-    font-size:6.4px;
-    letter-spacing:2px;
-    fill:var(--ink-soft);
-  }
-  .seal .ring{ fill:none; stroke:var(--line); }
-  .seal .core{ fill:none; stroke:var(--accent); stroke-width:1.6; }
-  .seal .star{ fill:var(--accent); }
-
-  h1.title{
-    font-size:clamp(2.6rem, 6vw, 4.1rem);
-    letter-spacing:-0.01em;
-  }
-  .tagline{
-    margin-top:1rem;
-    font-size:1.2rem;
-    color:var(--ink-soft);
-    max-width:34ch;
-  }
-  .tagline em{
-    font-style:normal;
-    color:var(--ink);
-    background:linear-gradient(to top, color-mix(in srgb, var(--accent) 30%, transparent) 0 0.28em, transparent 0.28em);
+  .hero .sub{
+    max-width:42ch; margin:1.3rem auto 0;
+    font-size:1.15rem; color:var(--ink-soft);
   }
 
-  section{ padding:3.4rem 0; border-bottom:1px solid var(--line); }
-  section:last-of-type{ border-bottom:none; }
+  /* ---------- ornament: atomic sunburst emblem ---------- */
+  .ornament{
+    display:flex; justify-content:center;
+    padding:2.6rem 0 3.2rem;
+  }
+  .ornament svg{ width:150px; height:150px; }
 
-  .kicker{ margin-bottom:0.9rem; }
-  h2.section-title{ font-size:1.9rem; margin-bottom:1.1rem; }
-  p.lede{ font-size:1.08rem; max-width:58ch; }
-  p{ color:var(--ink-soft); }
-  p strong{ color:var(--ink); font-weight:600; }
+  /* dotted divider rule, MCM confetti motif */
+  .dot-rule{
+    display:flex; justify-content:center; gap:0.9rem;
+    padding-bottom:2.6rem;
+  }
+  .dot-rule span{ width:9px; height:9px; border-radius:50%; }
+  .dot-rule span:nth-child(1){ background:var(--mustard); }
+  .dot-rule span:nth-child(2){ background:var(--teal); }
+  .dot-rule span:nth-child(3){ background:var(--burnt); }
+  .dot-rule span:nth-child(4){ background:var(--olive); }
+  .dot-rule span:nth-child(5){ background:var(--mustard); }
 
-  .articles{
-    display:flex;
-    flex-direction:column;
-  }
-  .article{
-    display:grid;
-    grid-template-columns:4.2rem 1fr;
-    gap:1rem;
-    padding:1.15rem 0;
-    border-top:1px solid var(--line);
-  }
-  .article:last-child{ border-bottom:1px solid var(--line); }
-  .article .num{
-    font-family:"IBM Plex Mono", ui-monospace, monospace;
-    font-size:0.78rem;
-    color:var(--accent2);
-    padding-top:0.2rem;
-  }
-  .article p{ margin:0; color:var(--ink); }
+  section{ padding:3.4rem 0; }
 
-  .perks{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:0;
-    border-top:1px solid var(--line);
-    border-left:1px solid var(--line);
+  /* ---------- MANIFESTO ---------- */
+  .manifesto{ background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .manifesto blockquote{
+    margin:0.6rem 0 1.3rem;
+    font-family:"Jost", sans-serif; font-weight:500;
+    font-size:clamp(1.7rem, 4.4vw, 2.6rem);
+    color:var(--burnt);
+    line-height:1.08;
   }
-  .perk{
-    padding:1.3rem 1.4rem;
-    border-right:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .perk .label{ display:block; margin-bottom:0.5rem; color:var(--accent2); }
-  .perk p{ margin:0; color:var(--ink); font-size:0.97rem; }
-  @media (max-width:560px){
-    .perks{ grid-template-columns:1fr; }
-  }
+  .manifesto p{ max-width:58ch; color:var(--ink-soft); font-size:1.05rem; }
 
+  /* ---------- ARTICLES ---------- */
+  .articles h2{ font-size:clamp(1.6rem, 3.6vw, 2.2rem); margin:0.5rem 0 1.8rem; }
+  .art-list{ display:flex; flex-direction:column; }
+  .art-row{
+    display:grid; grid-template-columns:3.2rem 1fr; gap:1.2rem;
+    padding:1.15rem 0; border-top:1px solid var(--line);
+  }
+  .art-row:last-child{ border-bottom:1px solid var(--line); }
+  .art-row .n{
+    font-family:"Jost", sans-serif; font-weight:500;
+    color:var(--teal); font-size:1.05rem;
+  }
+  .art-row p{ margin:0; font-size:1.02rem; }
+
+  /* ---------- PERKS ---------- */
+  .perks{ background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .perks h2{ font-size:clamp(1.6rem, 3.6vw, 2.2rem); margin:0.5rem 0 1.8rem; }
+  .perk-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .perk{ background:var(--surface); padding:1.5rem 1.4rem; }
+  .perk .icon{ width:34px; height:34px; margin-bottom:0.9rem; }
+  .perk h3{ font-size:1.1rem; margin-bottom:0.4rem; }
+  .perk p{ margin:0; color:var(--ink-soft); font-size:0.96rem; }
+  @media (max-width:560px){ .perk-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- MEMORIAM ---------- */
+  .memoriam .kicker{ color:var(--ink-soft); }
+  .memoriam h2{ font-size:clamp(1.5rem, 3.2vw, 2rem); margin:0.5rem 0 0.9rem; }
+  .memoriam .intro{ max-width:52ch; color:var(--ink-soft); margin:0 0 1.8rem; }
+  .in-memory-list{ display:flex; flex-direction:column; border-top:1px solid var(--line); }
+  .in-memory-row{
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+    padding:0.85rem 0; border-bottom:1px solid var(--line);
+  }
+  .in-memory-row .years{ color:var(--ink-soft); font-size:0.9rem; white-space:nowrap; }
+  .memoriam .note{ margin-top:1.3rem; font-size:0.85rem; color:var(--ink-soft); font-style:italic; }
+
+  /* ---------- JOIN ---------- */
   .join{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    gap:1.5rem;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:2px;
-    padding:2rem 2.2rem;
-    box-shadow:var(--shadow);
+    background:var(--teal); color:#F6F2E6;
+    text-align:center;
   }
-  .join h3{ font-size:1.5rem; margin-bottom:0.4rem; }
-  .join p{ margin:0; max-width:34ch; }
+  .join h2{ font-size:clamp(2rem, 5.5vw, 3rem); margin-bottom:0.8rem; color:#F6F2E6; }
+  .join p{ opacity:0.92; margin-bottom:1.7rem; }
   .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:0.5rem;
-    background:var(--accent);
-    color:var(--accent-ink);
-    font-family:"IBM Plex Mono", ui-monospace, monospace;
-    font-size:0.85rem;
-    letter-spacing:0.04em;
+    display:inline-block;
+    background:#F6F2E6; color:var(--teal);
+    font-family:"Jost", sans-serif; font-weight:500;
     text-decoration:none;
-    padding:0.85rem 1.3rem;
-    border-radius:2px;
-    white-space:nowrap;
+    padding:0.85rem 2.1rem;
+    border-radius:999px;
+    font-size:1.02rem;
     transition:transform 0.15s ease;
   }
-  .btn:hover{ transform:translateY(-1px); }
-  .btn:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+  @media (prefers-reduced-motion:reduce){ .btn{ transition:none; } }
 
   footer{
-    padding:2.5rem 0 4rem;
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    gap:1rem;
-    flex-wrap:wrap;
-  }
-  footer .label{ margin:0; }
-
-  @media (prefers-reduced-motion:reduce){
-    .btn{ transition:none; }
+    padding:1.6rem 0; text-align:center;
+    font-family:"Jost", sans-serif;
+    font-size:0.78rem; letter-spacing:0.05em; color:var(--ink-soft);
   }
 </style>
 
-<div class="wrap">
-  <header class="hero">
-    <div class="hero-top">
-      <span class="label">notdeadyetsociety.com</span>
-      <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
-        <circle class="ring" cx="50" cy="50" r="47" stroke-width="1"></circle>
-        <circle class="core" cx="50" cy="50" r="36"></circle>
-        <path id="ringpath" d="M 50,14 A 36,36 0 1 1 49.9,14" fill="none"></path>
-        <text><textPath href="#ringpath" startOffset="2">EST. 2026 &#8226; STILL HERE &#8226; STILL GOING &#8226;</textPath></text>
-        <path class="star" d="M50 44 L52.2 49.8 58 50 53.2 53.6 54.8 59.4 50 56 45.2 59.4 46.8 53.6 42 50 47.8 49.8 Z"></path>
-      </svg>
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">Not Dead Yet Society</span>
+    <span class="eyebrow">Est. 2026</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">A club, not a support group</span>
+    <h1 class="headline">The Not Dead Yet Society</h1>
+    <p class="sub">A club for people who have officially outlived their own low expectations &mdash; and intend to keep doing so, loudly.</p>
+  </div>
+</section>
+
+<div class="ornament" role="img" aria-label="An atomic sunburst emblem">
+  <svg viewBox="0 0 160 160" fill="none">
+    <circle cx="80" cy="80" r="10" fill="var(--burnt)"/>
+    <circle cx="80" cy="80" r="26" stroke="var(--ink)" stroke-width="1.5"/>
+    <circle cx="80" cy="80" r="46" stroke="var(--teal)" stroke-width="1.5"/>
+    <g stroke="var(--mustard)" stroke-width="2" stroke-linecap="round">
+      <line x1="80" y1="6" x2="80" y2="24"/>
+      <line x1="80" y1="136" x2="80" y2="154"/>
+      <line x1="6" y1="80" x2="24" y2="80"/>
+      <line x1="136" y1="80" x2="154" y2="80"/>
+      <line x1="26" y1="26" x2="39" y2="39"/>
+      <line x1="121" y1="121" x2="134" y2="134"/>
+      <line x1="134" y1="26" x2="121" y2="39"/>
+      <line x1="39" y1="121" x2="26" y2="134"/>
+    </g>
+  </svg>
+</div>
+
+<div class="dot-rule"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section class="manifesto">
+  <div class="wrap">
+    <p class="eyebrow">Manifesto</p>
+    <blockquote>We got old.<br>We did not get boring.</blockquote>
+    <p>The Not Dead Yet Society is a standing appointment for anyone who has decided that &ldquo;acting your age&rdquo; is a suggestion, not a rule. We meet, we make noise, we compare notes on grandchildren and hip replacements in the same sentence. Membership requires nothing but nerve and a decent pair of walking shoes.</p>
+  </div>
+</section>
+
+<section class="articles">
+  <div class="wrap">
+    <p class="eyebrow">The Bylaws</p>
+    <h2>Articles of Membership</h2>
+    <div class="art-list">
+      <div class="art-row"><span class="n">I.</span><p>Eligibility requires having outlived at least one doctor&rsquo;s prediction, one fad diet, or one truly regrettable haircut.</p></div>
+      <div class="art-row"><span class="n">II.</span><p>Minimum age is whatever lets you remember rotary phones. Lying about it is permitted and, frankly, encouraged.</p></div>
+      <div class="art-row"><span class="n">III.</span><p>Attendance at meetings is optional. Enthusiasm for the cake table is not.</p></div>
+      <div class="art-row"><span class="n">IV.</span><p>No story may begin with &ldquo;back in my day&rdquo; unless it ends with a joke at your own expense.</p></div>
+      <div class="art-row"><span class="n">V.</span><p>Every member agrees to try one new thing per month &mdash; ideally something the grandchildren would find deeply embarrassing.</p></div>
     </div>
-    <h1 class="title">The Not Dead&nbsp;Yet Society</h1>
-    <p class="tagline">A club for people who have <em>officially</em> outlived their own low expectations &mdash; and intend to keep doing so, loudly.</p>
-  </header>
+  </div>
+</section>
 
-  <section id="manifesto">
-    <p class="label kicker">Manifesto</p>
-    <h2 class="section-title">We got old. We did not get boring.</h2>
-    <p class="lede">The Not Dead Yet Society is a standing appointment for anyone who has decided that &ldquo;acting your age&rdquo; is a suggestion, not a rule. We meet, we make noise, we compare notes on grandchildren and hip replacements in the same sentence. <strong>Membership requires nothing but nerve and a decent pair of walking shoes.</strong></p>
-  </section>
-
-  <section id="articles">
-    <p class="label kicker">Articles of Membership</p>
-    <h2 class="section-title">The by-laws, such as they are</h2>
-    <div class="articles">
-      <div class="article">
-        <span class="num">ART. I</span>
-        <p>Eligibility requires having outlived at least one doctor&rsquo;s prediction, one fad diet, or one truly regrettable haircut.</p>
-      </div>
-      <div class="article">
-        <span class="num">ART. II</span>
-        <p>Minimum age is whatever lets you remember rotary phones. Lying about it is permitted and, frankly, encouraged.</p>
-      </div>
-      <div class="article">
-        <span class="num">ART. III</span>
-        <p>Attendance at meetings is optional. Enthusiasm for the cake table is not.</p>
-      </div>
-      <div class="article">
-        <span class="num">ART. IV</span>
-        <p>No story may begin with &ldquo;back in my day&rdquo; unless it ends with a joke at your own expense.</p>
-      </div>
-      <div class="article">
-        <span class="num">ART. V</span>
-        <p>Every member agrees to try one new thing per month &mdash; ideally something the grandchildren would find deeply embarrassing.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="perks">
-    <p class="label kicker">Member Benefits</p>
-    <h2 class="section-title">What you get for showing up</h2>
-    <div class="perks">
+<section class="perks">
+  <div class="wrap">
+    <p class="eyebrow">Member Benefits</p>
+    <h2>What You Get</h2>
+    <div class="perk-grid">
       <div class="perk">
-        <span class="label">Gatherings</span>
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="var(--mustard)" stroke-width="2.5"/></svg>
+        <h3>Gatherings</h3>
         <p>Coffee, cards, and complaining &mdash; on a schedule loose enough to forget and forgive.</p>
       </div>
       <div class="perk">
-        <span class="label">Field trips</span>
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M20 4 L36 34 L4 34 Z" stroke="var(--teal)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        <h3>Field Trips</h3>
         <p>Outings chosen for scenery, snacks, and a reasonable number of bathrooms.</p>
       </div>
       <div class="perk">
-        <span class="label">The Pulse</span>
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" transform="rotate(45 20 20)" stroke="var(--burnt)" stroke-width="2.5"/></svg>
+        <h3>The Pulse</h3>
         <p>An occasional newsletter, proof of life, and an excuse to gossip in writing.</p>
       </div>
       <div class="perk">
-        <span class="label">Still Got It Awards</span>
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M20 5 L23.5 16.5 L35 20 L23.5 23.5 L20 35 L16.5 23.5 L5 20 L16.5 16.5 Z" stroke="var(--olive)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        <h3>Still Got It Awards</h3>
         <p>Annual, unserious, and handed out for reasons that make sense only to us.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="join">
-    <div class="join">
-      <div>
-        <h3>Not dead yet? Come prove it.</h3>
-        <p>Say hello and we&rsquo;ll tell you when and where the next gathering is.</p>
-      </div>
-      <a class="btn" href="mailto:hello@notdeadyetsociety.com">Say hello &rarr;</a>
+<section class="memoriam">
+  <div class="wrap">
+    <p class="eyebrow kicker">In Remembrance</p>
+    <h2>Missed at the Table</h2>
+    <p class="intro">Some members leave the room but never really leave the club. This is where we keep their names close.</p>
+    <div class="in-memory-list">
+      <div class="in-memory-row"><span class="who">Jane Q. Sample</span><span class="years">1948 &ndash; 2024</span></div>
+      <div class="in-memory-row"><span class="who">Robert &ldquo;Bob&rdquo; Example</span><span class="years">1951 &ndash; 2025</span></div>
+      <div class="in-memory-row"><span class="who">Marie Placeholder</span><span class="years">1945 &ndash; 2023</span></div>
     </div>
-  </section>
+    <p class="note">(Placeholder names above &mdash; swap in the real ones whenever you're ready.)</p>
+  </div>
+</section>
 
-  <footer>
-    <p class="label">&copy; 2026 The Not Dead Yet Society</p>
-    <p class="label">Est. somewhere between a nap and a second wind</p>
-  </footer>
-</div>
+<section class="join">
+  <div class="wrap">
+    <h2>Not dead yet?<br>Come prove it.</h2>
+    <p>Say hello and we'll tell you when and where the next gathering is.</p>
+    <a class="btn" href="mailto:hello@notdeadyetsociety.com">Say hello &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 The Not Dead Yet Society &mdash; est. somewhere between a nap and a second wind
+</footer>
